@@ -8,3 +8,9 @@ def index(request):
         "post_list": post_qs,
     })
 
+def single_post_page(request, pk):
+    post = Post.objects.get(pk=pk)
+    return render(request, "blog/single_post_page.html", {
+        "post": post,
+    })
+
